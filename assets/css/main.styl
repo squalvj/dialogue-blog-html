@@ -1,0 +1,482 @@
+@font-face
+	font-family dinR
+	src url(../fonts/dinregular-webfont.woff)
+
+@font-face
+	font-family dinM
+	src url(../fonts/dinmedium-webfont.woff)
+
+@font-face
+	font-family circB
+	src url(../fonts/CircularStd-Book.woff)
+@font-face
+	font-family ptSerifB
+	src url(../fonts/PTF75F-webfont.woff)
+	
+$h18 = 18px
+$h14 = 14px
+$h12 = 12px
+$h36 = 36px
+$h48 = 48px
+$tit = 'Titillium Web', sans-serif;
+$active = #000444
+$gray = #808080
+$grayMint = #afafaf
+$grayDarken = #666666
+$grayLite = #636363
+$graySemi = #959595
+$dark = #444444
+$darkBlue = #2d2d2d
+
+display()
+	-webkit-display arguments
+	-moz-display arguments
+	-ms-display arguments
+	-o-display arguments
+	display arguments
+flex-direction()
+	-webkit-flex-direction arguments
+	-moz-flex-direction arguments
+	-ms-flex-direction arguments
+	-o-flex-direction arguments
+	flex-direction arguments
+transition()
+	-webkit-transition: arguments
+	-moz-transition: arguments
+	-ms-transition: arguments
+	-o-transition: arguments
+	transition: arguments
+
+html
+	box-sizing: border-box;
+*, *:before, *:after
+	box-sizing: inherit;
+a
+	text-decoration none
+	color $gray
+h1,h2,h3
+	font-family dinR
+	color black
+ul
+	list-style-type none
+	padding 0
+figure
+	margin 0
+.h18
+	font-size $h18
+.h14
+	font-size $h14
+.gray
+	color $gray
+.dinM
+	font-family dinM
+// container bootstrap
+.container,footer
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+.no-scroll
+	overflow hidden
+button
+	border none
+	transition all .25s ease
+	&:hover
+		cursor pointer
+		border 1px solid $black
+		background white
+		color $black
+@media (min-width: 768px)
+	.container
+		width unset
+		
+@media (min-width: 993px)
+	.container
+		width unset
+	
+@media (min-width: 1280px)
+	.container,footer
+		width 1260px
+		padding-left 10px
+		padding-right 10px
+
+// header
+header
+	padding 30px 0 32px
+.wrapper-logo
+	text-align center
+	img
+		height 133px
+nav
+	ul
+		display flex
+		justify-content center
+		align-items center
+		margin 20px 0
+		li
+			padding 15px
+			a
+				margin 0 18px
+				&:hover
+					color $active
+				&.active
+					color $active
+.wrapper-sub-heading
+	background #efefef
+	ul
+		display flex
+		justify-content center
+		align-items center
+		margin-bottom 0
+		li
+			padding 15px
+			position relative
+			&:after
+				content ''
+				position absolute
+				width 1px
+				background $gray
+				right 0
+				top 0
+				bottom 0
+				height calc(100% - 30px)
+				margin auto
+			&:last-of-type
+				&:after
+					display none
+			a
+				text-transform uppercase
+				&:hover
+					color $active
+// main feed
+.wrapper-main-feed
+	display flex
+	position relative
+	padding-bottom 32px
+	img
+		width 100%
+		height auto
+	&:after
+		position absolute
+		bottom 0
+		left 0
+		content ''
+		width 100%
+		height 1px
+		background #dcdcdc
+.main-feed
+	width 62%
+.wrapper-sub-feed
+	width 38%
+	padding-left 30px
+	.img-feed
+		&:after
+			padding-top 66%
+.divider
+	width 100%
+	height 1px
+	box-shadow 0px 1.5px 1px 0px rgba(0,0,0,0.2)
+.img-feed
+	display block
+	position relative
+	&:after
+		content ''
+		display block
+		padding-top 67.7%
+	figure
+		position absolute
+		overflow hidden
+		top 0
+		left 0
+		bottom 0
+		right 0
+		width 100%
+		height 100%
+		img
+			width 100%
+			height auto
+			display block
+.date-feed
+	font-family dinR
+	font-size 14px
+	color $grayMint
+.cat-feed
+	font-size 12px
+	font-family dinR
+	color $dark
+	display inline-block
+	text-transform uppercase
+.big-feed
+	.cat-feed
+		font-size 14px
+	a.title-feed
+		font-family ptSerifB
+		font-size 36px
+		margin-bottom 26px
+.title-feed
+	font-family dinM
+	font-size 18px
+	color black
+	display block
+	margin 10px 0
+.wrapper-desc-feed
+	padding 15px 20px 0
+	> *
+		display inline-block
+		margin 0
+	.title-feed
+		margin 10px 0
+.sub-feed
+	display flex
+	flex-wrap wrap
+	.left
+		width 68%
+		padding-right 20px
+	.right
+		width 32%
+.item-sub-feed
+	position relative
+	padding 24px 0
+	.cat-feed
+		display block
+	&:after
+		position absolute
+		content ''
+		width 100%
+		bottom 0
+		right 0
+		background #e2e2e2
+		height 1px
+	&:first-child
+		padding-top 0
+	&:last-child
+		&:after
+			display none
+
+// archive
+.archive-container
+	overflow hidden
+.wrapper-archive
+	padding 36px 0
+	display flex
+	flex-wrap wrap
+	margin 0 -10px
+	position relative
+	margin-bottom -92px
+	.cat-feed
+		margin 15px 0 0
+.wrapper-item-archive
+	display flex
+	width 25%
+	flex-direction column
+	padding 0 10px 74px
+	position relative
+	&:after
+		position absolute
+		right 0
+		top 0
+		content ''
+		width 1px
+		height 100%
+		background #dcdcdc
+	&:nth-child(4)
+		&:after
+			display none
+	// &:nth-last-child(-n+4)
+	// 	padding-bottom 0
+.wrapper-img-archive
+	width 100%
+.wrapper-desc-archive
+	display flex
+	flex-direction column
+	flex 1 1 auto
+	.title-feed
+		flex-grow 1
+.pagination-archive
+	display flex
+	align-items center
+	justify-content center
+	background white
+	height: 70px;
+	z-index: 2;
+	width calc(100% + 20px)
+	position: relative;
+	a
+		font-family dinR
+		font-size 14px
+		color black
+footer
+	font-family $tit
+	padding-bottom 60px
+	position relative
+	margin-top 30px
+	
+	.footer-address
+		font-family inherit
+		color #848484
+		left -15px
+		position relative
+		h2
+			font-size 17px
+			font-family $tit
+			margin 0
+			color inherit
+			font-weight unset
+			&:last-of-type
+				margin-top 20px
+		p
+			font-family inherit
+			font-size 12px
+			line-height 16px
+			margin 0
+			color inherit
+	.wrapper-footer-link
+		list-style-type none
+		padding 0
+		margin 0
+		color #848484
+		li
+			display block
+			font-size 12px
+			color inherit
+			font-family $tit
+			&:first-child
+				font-size 17px
+				margin-bottom 1px
+			a
+				font-family $tit
+				color inherit
+				line-height 17px
+.wrapper-footer
+	display flex
+	justify-content space-between
+.socmed-icon
+	margin-top 25px
+	img
+		height 20px
+		margin 0 2px
+.row
+	display flex
+	.col-5
+		width 50%
+	.col-4
+		width 40%
+	.col-6
+		width 60%
+	.col-10
+		width 100%
+	.col-7
+		width 70%
+	.col-3
+		width 30%
+	.gray
+		background #efefef
+	.white
+		background #fcfcfc
+	.table
+		padding 21px
+		span
+			font-size 18px
+			font-family dinM
+			i
+				font-style normal
+		&.r
+			span
+				font-family dinR
+.flex-col
+	flex-direction column
+.flex
+	display flex
+.page-archive
+	.wrapper-archive
+		padding-top 0
+// -------------------------------------------------------------------------------------------------------------
+@media (max-width: 993px)
+	.wrapper-main-feed
+		flex-wrap wrap
+	.main-feed
+		width 50%
+	.wrapper-sub-feed
+		width 50%
+@media (max-width: 768px)
+	.cat-feed
+		display block
+	.title-feed
+		display block
+	nav,.wrapper-sub-heading
+		display none
+	header
+		padding 20px 0
+	.big-feed
+		a.title-feed
+			font-size 28px
+	.main-feed,.wrapper-sub-feed
+		width 100%
+	.main-feed
+		.img-feed:after
+			padding-top 100%
+	.wrapper-sub-feed
+		padding 0
+		margin 30px -10px 0
+	.wrapper-desc-feed
+		padding 10px 0 0
+	.sub-feed
+		flex-direction column-reverse
+		.left,.right
+			width 100%
+		.left
+			padding-right 0
+	.item-sub-feed
+		width 50%
+		padding 0 10px
+		.date-feed
+			margin-bottom 80px
+			display block
+		&:nth-last-child(-n + 2)
+			.date-feed
+				margin-bottom 20px
+		&:after
+			right 0
+			width 1px
+			height 100%
+	.cat-feed
+		margin 15px 0
+	.title-feed
+		font-size 16px
+	.wrapper-sub-feed
+		width calc(100% + 20px)
+		display flex
+		flex-wrap wrap
+		.img-feed:after
+			padding-top 67.7%
+	.wrapper-main-feed
+		padding-bottom 24px
+	.wrapper-archive
+		padding 24px 0
+	.wrapper-item-archive
+		width 50%
+		&:nth-child(0n + 2)
+			&:after
+				display none
+	.wrapper-archive
+		.cat-feed
+			margin 15px 0 10px
+	.wrapper-footer
+		flex-wrap wrap
+	footer
+		padding-bottom 0
+		.footer-address
+			width 100%
+			left 0 !important
+			margin-bottom 30px
+		.wrapper-footer-link
+			width 50%
+			margin-bottom 20px
+	// .main-feed
+	// 	margin -10px
+	// 	width calc(100% + 20px)
+	
+//@media (max-width: 576px)
+	
+// -----------------------------------------------------------------------------------------------------------
+//@-moz-document url-prefix()
