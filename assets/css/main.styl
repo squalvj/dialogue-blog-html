@@ -12,7 +12,14 @@
 @font-face
 	font-family ptSerifB
 	src url(../fonts/PTF75F-webfont.woff)
-	
+@font-face
+	font-family dinB
+	src url(../fonts/dinbold-webfont.woff)
+@font-face
+	font-family ptSerifR
+	src url(../fonts/pt_serif_r.woff)
+
+
 $h18 = 18px
 $h14 = 14px
 $h12 = 12px
@@ -71,9 +78,19 @@ figure
 .dinM
 	font-family dinM
 // container bootstrap
-.container,footer
+.container
 	padding-right: 10px;
 	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+.wrapper-single
+	padding-left 10px
+	padding-right 10px
+	margin-right auto
+	margin-left auto
+footer
+	padding-right: 30px;
+	padding-left: 30px;
 	margin-right: auto;
 	margin-left: auto;
 .no-scroll
@@ -89,16 +106,22 @@ button
 @media (min-width: 768px)
 	.container
 		width unset
+	.wrapper-single
+		padding 0 70px
 		
 @media (min-width: 993px)
 	.container
 		width unset
+	.wrapper-single
+		padding 0 100px
 	
 @media (min-width: 1280px)
 	.container,footer
-		width 1260px
-		padding-left 10px
-		padding-right 10px
+		width 1240px
+		// padding-left 10px
+		// padding-right 10px
+	.wrapper-single
+		padding 0 151px
 
 // header
 header
@@ -305,6 +328,57 @@ nav
 		font-family dinR
 		font-size 14px
 		color black
+// single
+.title-post
+	font-size 48px
+	color $active
+	font-family dinB
+	font-weight bold
+	margin-top 0
+.wrapper-content-single
+	margin-top 40px
+.writter
+	color #666666
+	font-family dinM
+	font-size 18px
+	margin 0 0 10px
+	line-height 30px
+.date-writter
+	font-size 18px
+	font-family dinR
+	color #666666
+.wrapper-content-single
+	display flex
+	flex-wrap wrap
+	.left
+		width 30%
+		padding-right 20px
+	.right
+		width 70%
+
+.content-single
+	figure
+		img
+			width 100%
+			height auto
+	figcaption
+		font-size 14px
+		color #636363
+		font-family dinR
+		margin 15px 0
+	p
+		font-size 18px
+		font-family ptSerifR
+		color black
+		margin 0 0 10px
+		line-height 30px
+	h2
+		width 30%
+		font-size 21px
+		font-family dinM
+		color #2d2d2d
+
+// footer
 footer
 	font-family $tit
 	padding-bottom 60px
