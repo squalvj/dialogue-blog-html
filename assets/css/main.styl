@@ -89,8 +89,8 @@ figure
 	margin-right auto
 	margin-left auto
 footer
-	padding-right: 30px;
-	padding-left: 30px;
+	padding-right: 20px;
+	padding-left: 20px;
 	margin-right: auto;
 	margin-left: auto;
 .no-scroll
@@ -108,6 +108,9 @@ button
 		width unset
 	.wrapper-single
 		padding 0 70px
+	footer
+		padding-left 30px
+		padding-right 30px
 		
 @media (min-width: 993px)
 	.container
@@ -335,48 +338,74 @@ nav
 	font-family dinB
 	font-weight bold
 	margin-top 0
+
+.wrapper-writter
+	width 35%
+	padding-right 20px
+	.writter
+		color #666666
+		font-family dinM
+		font-size 18px
+		margin 0 0 10px
+		line-height 30px
+		width 100%
+	.date-writter
+		font-size 18px
+		font-family dinR
+		color #666666
+		display flex
+		flex-wrap wrap
+
 .wrapper-content-single
 	margin-top 40px
-.writter
-	color #666666
-	font-family dinM
-	font-size 18px
-	margin 0 0 10px
-	line-height 30px
-.date-writter
-	font-size 18px
-	font-family dinR
-	color #666666
-.wrapper-content-single
 	display flex
 	flex-wrap wrap
-	.left
-		width 30%
-		padding-right 20px
-	.right
-		width 70%
-
-.content-single
+	
 	figure
+		width 100%
+		padding-left 35%
+		margin 20px 0
 		img
 			width 100%
 			height auto
-	figcaption
-		font-size 14px
-		color #636363
-		font-family dinR
-		margin 15px 0
+		figcaption
+			font-size 14px
+			color #636363
+			font-family dinR
+			margin 15px 0
+			width 100%
 	p
 		font-size 18px
 		font-family ptSerifR
 		color black
 		margin 0 0 10px
 		line-height 30px
+		width 65%
+		margin-bottom 30px
+	p + p,figure+p
+		width 100%
+		padding-left 35%
 	h2
-		width 30%
+		width 35%
 		font-size 21px
 		font-family dinM
 		color #2d2d2d
+		margin-top 0
+		line-height 30px
+		padding-right 20px
+	h2 + h2
+		width 35%
+		flex-grow 1
+	h2 + h2 + p
+		width 100%
+		padding-left 35%
+	h2 + figure
+		width 65%
+		padding-left 0
+		margin-top 0
+	h2 + h2 + figure
+		width 100%
+		padding-left 35%
 
 // footer
 footer
@@ -473,6 +502,21 @@ footer
 	.wrapper-sub-feed
 		width 50%
 @media (max-width: 768px)
+	.wrapper-content-single
+		margin-top 30px
+		*
+			width 100% !important
+			padding-left 0 !important
+		.wrapper-writter
+			padding-right 0
+			margin-bottom 30px
+			.writter
+				padding-right 0
+		h2
+			padding-right 0
+	.title-post
+		font-size 34px
+		margin-bottom 0
 	.cat-feed
 		display block
 	.title-feed
@@ -550,7 +594,9 @@ footer
 	// 	margin -10px
 	// 	width calc(100% + 20px)
 	
-//@media (max-width: 576px)
+@media (max-width: 576px)
+	.title-post
+			font-size 34px
 	
 // -----------------------------------------------------------------------------------------------------------
 //@-moz-document url-prefix()
