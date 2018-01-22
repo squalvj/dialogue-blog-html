@@ -84,7 +84,7 @@ figure
 	padding-left: 10px;
 	margin-right: auto;
 	margin-left: auto;
-.wrapper-single
+.wrapper-single,.wrapper-carousel-single,.navigasi-carousel,.container-single
 	padding-left 10px
 	padding-right 10px
 	margin-right auto
@@ -107,7 +107,7 @@ button
 @media (min-width: 768px)
 	.container
 		width unset
-	.wrapper-single
+	.wrapper-single,.wrapper-carousel-single,.navigasi-carousel,.container-single
 		padding 0 70px
 	footer
 		padding-left 30px
@@ -116,15 +116,17 @@ button
 @media (min-width: 993px)
 	.container
 		width unset
-	.wrapper-single
+	.wrapper-single,.wrapper-carousel-single,.navigasi-carousel,.container-single
 		padding 0 100px
 	
 @media (min-width: 1280px)
-	.container,footer
+	footer
 		width 1240px
+	.container
+		width 1280px
 		// padding-left 10px
 		// padding-right 10px
-	.wrapper-single
+	.wrapper-single,.wrapper-carousel-single,.navigasi-carousel,.container-single
 		padding 0 151px
 
 // header
@@ -361,6 +363,33 @@ nav
 	margin-top 40px
 	display flex
 	flex-wrap wrap
+	.vjs-poster
+		background-color #E4E4E4
+		background-size cover
+	.wrapper-writter 
+		&+ figure
+			width 65%
+			padding-left 0
+			margin-top 0
+		&+ h2
+			width 65%
+			padding-right 20px
+		&+ .wrapper-vid
+			width 65%
+			padding-left 0
+	.wrapper-vid
+		position relative
+		width 100%
+		padding-left 35%
+		margin 0 0 35px
+		overflow hidden
+		&+ p
+			width 100%
+			padding-left 35%
+		
+	h2 + .wrapper-vid
+		width 65%
+		padding-left 0
 	figure
 		width 100%
 		padding-left 35%
@@ -406,7 +435,88 @@ nav
 	h2 + h2 + figure
 		width 100%
 		padding-left 35%
-
+	h2 + figure
+		width 65%
+	// h2 + p
+	// 	width 100%
+	// 	padding-left 35%
+	p + figure
+		margin-top 0
+	p.quote
+		font-family dinM
+		font-size 24px
+		color #959595
+		padding-top 25px
+		padding-bottom 25px
+		padding-left 0
+		border 1px solid #808080
+		border-left none
+		border-right none
+		width 65%
+		margin-left 35%
+		b
+			color #1C1C1C
+// carousel single
+.wrapper-carousel-single
+	position relative
+	.item
+		img
+			width 100%
+	.owl-theme
+		.owl-dots
+			position: absolute;
+			width: 100%;
+			bottom: 10px;
+.navigasi-carousel
+	width: 100%;
+	position: absolute;
+	left: 0;
+	margin-top: auto;
+	display: -webkit-box;
+	bottom: 0;
+	margin-bottom: auto;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	right: 0;
+	top: 0;
+	margin-bottom: auto;
+	margin-top: auto;
+	height: 30px;
+	z-index: 1;
+	align-items center
+	pointer-events none
+	button
+		background none
+		pointer-events all
+		&:focus
+			outline none
+	.disabled
+		img
+			display none
+.gray-carousel
+	background #F0F0F0
+.wrapper-related-post
+	padding-top 40px
+	padding-bottom 30px
+	h2
+		font-size 21px
+		font-family dinM
+		margin-top 0
+	> div
+		margin 0 -10px
+		display flex
+	.wrapper-item-archive
+		width 33.3%
+		padding-bottom 0
+		&:last-child
+			&:after
+				display none
+		.wrapper-desc-archive
+			padding 10px 5px
+	.date-feed
+		margin-top 20px
 // footer
 footer
 	font-family $tit
@@ -501,19 +611,40 @@ footer
 		width 50%
 	.wrapper-sub-feed
 		width 50%
+	.wrapper-content-single
+		h2
+			padding-right 30px
 @media (max-width: 768px)
+	.wrapper-carousel-single
+		margin-left -10px
+		width calc(100% + 20px)
+		overflow hidden
+		padding 0
+	.wrapper-related-post
+		.cat-feed
+			margin 0
+		.wrapper-item-archive
+			&:after
+				display block !important
+			&:last-child
+				&:after
+					display none !important
 	.wrapper-content-single
 		margin-top 30px
-		*
+		h2,p,figure,.wrapper-vid
 			width 100% !important
 			padding-left 0 !important
 		.wrapper-writter
 			padding-right 0
 			margin-bottom 30px
+			width 100%
 			.writter
 				padding-right 0
 		h2
 			padding-right 0
+		p.quote
+			margin-left 0
+			font-size 22px
 	.title-post
 		font-size 34px
 		margin-bottom 0
@@ -597,6 +728,16 @@ footer
 @media (max-width: 576px)
 	.title-post
 			font-size 34px
+	.wrapper-related-post
+		> div
+			flex-wrap wrap
+		.wrapper-item-archive
+			width 100%
+			margin-bottom 20px
+			&:after
+				display none !important
+			&:last-child
+				margin-bottom 0
 	
 // -----------------------------------------------------------------------------------------------------------
 //@-moz-document url-prefix()
